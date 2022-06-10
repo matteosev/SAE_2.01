@@ -8,30 +8,35 @@
     Title="MainWindow"
     Width="1200"
     Height="800"
+    MinWidth="1200"
+    MinHeight="800"
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="627.232" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="800" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <ListView x:Name="lv">
+            <ListView
+                x:Name="lv1"
+                Margin="10,10,10,10"
+                FontSize="24">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn
-                            Width="250"
+                            Width="267"
                             DisplayMemberBinding="{Binding date_emprunt}"
                             Header="date" />
                         <GridViewColumn
-                            Width="250"
+                            Width="267"
                             DisplayMemberBinding="{Binding nom}"
                             Header="employé" />
                         <GridViewColumn
-                            Width="250"
+                            Width="267"
                             DisplayMemberBinding="{Binding libelle_vehicule}"
                             Header="véhicule" />
                     </GridView>
@@ -39,104 +44,129 @@
             </ListView>
             <Rectangle
                 Grid.Column="1"
-                Width="370"
-                Height="600"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
+                Margin="15,10,10,13"
                 Stroke="Black" />
-            <Label
-                Grid.Column="1"
-                Width="72"
-                Height="25"
-                Margin="174,82,154,520"
-                Content="Rechercher" />
 
             <ListView
                 x:Name="lvRechercher"
                 Grid.Column="1"
-                Margin="30,30,292,272">
+                Margin="25,24,25,491"
+                FontSize="24">
                 <ListViewItem Content="date" />
                 <ListViewItem Content="employé" />
                 <ListViewItem Content="véhicule" />
             </ListView>
             <Button
+                x:Name="btnConsulter"
                 Grid.Column="1"
-                Margin="15,450,15,140"
-                Content="Consulter" />
+                Height="70"
+                Margin="25,381,25,176"
+                Content="Consulter"
+                FontSize="24"
+                FontWeight="Normal" />
             <Button
                 x:Name="btnModifier"
                 Grid.Column="1"
-                Margin="15,492,15,98"
-                Content="Modifier" />
+                Height="70"
+                Margin="25,456,25,101"
+                Content="Modifier"
+                FontSize="24" />
             <Button
                 x:Name="btnSupprimer"
                 Grid.Column="1"
-                Margin="15,534,15,56"
-                Content="Supprimer" />
+                Height="73"
+                Margin="25,531,25,23"
+                Content="Supprimer"
+                FontSize="24" />
             <TextBox
                 Grid.Column="1"
-                Margin="378,210,22,386"
-                TextWrapping="Wrap" />
-        </Grid>
-        <Grid Grid.Row="1">
-            <Rectangle Margin="10,10,10,10" Stroke="Black" />
-            <Label
-                Width="37"
-                Height="28"
-                Margin="30,24,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="Date :" />
-            <TextBox
-                x:Name="txtDate"
-                Width="120"
-                Margin="81,29,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Text="{Binding Ville}"
-                TextWrapping="Wrap" />
-            <Label
-                Margin="265,29,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="mission concernée :" />
-            <TextBox
-                x:Name="txtMission"
-                Width="120"
-                Margin="384,33,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Text=""
+                Margin="25,141,25,455"
+                FontSize="18"
                 TextWrapping="Wrap" />
             <Button
-                Margin="439,79,0,0"
-                HorizontalAlignment="Left"
+                Grid.Column="1"
+                Margin="25,177,26,0"
                 VerticalAlignment="Top"
-                Content="Créer" />
-            <Label
-                Margin="21,0,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Content="Employé" />
-            <Label
-                Margin="30,103,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Content="Véhicule" />
-            <TextBox
-                x:Name="txtEmploye"
-                Width="120"
-                Margin="81,0,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                TextWrapping="Wrap" />
-            <TextBox
-                x:Name="txtVehicule"
-                Width="120"
-                Margin="89,111,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                TextWrapping="Wrap" />
+                Content="Rechercher"
+                FontSize="24" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid Margin="10,10,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.ColumnSpan="5" Stroke="Black" />
+                <Label
+                    Grid.Column="0"
+                    Height="45"
+                    Margin="68,18,68,0"
+                    VerticalAlignment="Top"
+                    Content="Date"
+                    FontSize="24" />
+                <TextBox
+                    x:Name="txtDate"
+                    Grid.Column="0"
+                    Height="30"
+                    Margin="10,68,10,0"
+                    VerticalAlignment="Top"
+                    AutomationProperties.HelpText="dd/mm/yyyy"
+                    FontSize="18"
+                    Text=""
+                    TextWrapping="Wrap" />
+                <Label
+                    Grid.Column="3"
+                    Height="45"
+                    Margin="87,18,86,0"
+                    VerticalAlignment="Top"
+                    Content="mission concernée"
+                    FontSize="24" />
+                <TextBox
+                    x:Name="txtMission"
+                    Grid.Column="3"
+                    Margin="10,68,10,10"
+                    FontSize="18"
+                    Text=""
+                    TextWrapping="Wrap" />
+                <Button
+                    Grid.Column="4"
+                    Margin="10,10,10,10"
+                    Content="Créer"
+                    FontSize="24" />
+                <Label
+                    Grid.Column="1"
+                    Height="45"
+                    Margin="44,18,44,0"
+                    VerticalAlignment="Top"
+                    Content="Employé"
+                    FontSize="24" />
+                <Label
+                    Grid.Column="2"
+                    Height="45"
+                    Margin="50,18,41,0"
+                    VerticalAlignment="Top"
+                    Content="Véhicule"
+                    FontSize="24" />
+                <TextBox
+                    x:Name="txtEmploye"
+                    Grid.Column="1"
+                    Height="30"
+                    Margin="10,68,10,0"
+                    VerticalAlignment="Top"
+                    FontSize="18"
+                    TextWrapping="Wrap" />
+                <TextBox
+                    x:Name="txtVehicule"
+                    Grid.Column="2"
+                    Height="30"
+                    Margin="10,68,10,0"
+                    VerticalAlignment="Top"
+                    FontSize="18"
+                    TextWrapping="Wrap" />
+            </Grid>
         </Grid>
     </Grid>
 </Window>
