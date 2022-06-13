@@ -54,7 +54,7 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from dbo.CATEGORIE_VEHICULE;");
+                    reader = access.getData("select * from dbo.EMPLOYE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

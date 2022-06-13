@@ -49,17 +49,17 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from dbo.CATEGORIE_VEHICULE;");
+                    reader = access.getData("select * from dbo.EMPRUNTE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
-                            Emprunte unEmploye = new Emprunte();
-                            unEmploye.Id_vehicule = reader.GetInt64(0);
-                            unEmploye.Date_emprunt = reader.GetString(1);
-                            unEmploye.Id_employe = reader.GetInt64(2);
-                            unEmploye.Mission_concernee = reader.GetString(3);
-                            liste.Add(unEmploye);
+                            Emprunte unEmprunt = new Emprunte();
+                            unEmprunt.Id_vehicule = reader.GetInt64(0);
+                            unEmprunt.Date_emprunt = reader.GetString(1);
+                            unEmprunt.Id_employe = reader.GetInt64(2);
+                            unEmprunt.Mission_concernee = reader.GetString(3);
+                            liste.Add(unEmprunt);
                         }
                     }
                     else

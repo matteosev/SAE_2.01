@@ -49,11 +49,11 @@ namespace SAE_2._01
                     {
                         while (reader.Read())
                         {
-                            Vehicule unEmploye = new Vehicule();
-                            unEmploye.Id_vehicule = reader.GetInt64(0);
-                            unEmploye.Id_categorie = reader.GetInt64(1);
-                            unEmploye.Libelle_vehicule = reader.GetString(2);
-                            liste.Add(unEmploye);
+                            Vehicule unVehicule = new Vehicule();
+                            unVehicule.Id_vehicule = reader.GetInt64(0);
+                            unVehicule.Id_categorie = reader.GetInt64(1);
+                            unVehicule.Libelle_vehicule = reader.GetString(2);
+                            liste.Add(unVehicule);
                         }
                     }
                     else
