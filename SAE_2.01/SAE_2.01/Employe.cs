@@ -54,13 +54,13 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from dbo.EMPLOYE;");
+                    reader = access.getData("select * from EMPLOYE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Employe unEmploye = new Employe();
-                            unEmploye.Id_employe = reader.GetInt64(0);
+                            unEmploye.Id_employe = reader.GetInt32(0);
                             unEmploye.Nom = reader.GetString(1);
                             unEmploye.Prenom = reader.GetString(2);
                             unEmploye.Num_tel = reader.GetString(3);

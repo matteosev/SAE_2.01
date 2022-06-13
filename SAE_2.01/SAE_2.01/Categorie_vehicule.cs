@@ -39,13 +39,13 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from dervauxt.CATEGORIE_VEHICULE;");
+                    reader = access.getData("select * from CATEGORIE_VEHICULE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Categorie_vehicule uneCategorie = new Categorie_vehicule();
-                            uneCategorie.Id_categorie = reader.GetInt64(0);
+                            uneCategorie.Id_categorie = reader.GetInt32(0);
                             uneCategorie.Libelle_categorie = reader.GetString(1);
                             liste.Add(uneCategorie);
                         }

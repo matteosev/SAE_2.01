@@ -44,14 +44,14 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from dbo.VEHICULE;");
+                    reader = access.getData("select * from VEHICULE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Vehicule unVehicule = new Vehicule();
-                            unVehicule.Id_vehicule = reader.GetInt64(0);
-                            unVehicule.Id_categorie = reader.GetInt64(1);
+                            unVehicule.Id_vehicule = reader.GetInt32(0);
+                            unVehicule.Id_categorie = reader.GetInt32(1);
                             unVehicule.Libelle_vehicule = reader.GetString(2);
                             liste.Add(unVehicule);
                         }

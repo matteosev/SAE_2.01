@@ -6,7 +6,7 @@ namespace SAE_2._01
 {
     class Date_emprunt : Crud<Date_emprunt>
     {
-        public long Date
+        public DateTime Date
         {
             get; set;
         }
@@ -34,13 +34,13 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from dbo.DATE_EMPRUNT;");
+                    reader = access.getData("select * from DATE_EMPRUNT;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Date_emprunt uneDate = new Date_emprunt();
-                            uneDate.Date = reader.GetInt64(0);
+                            uneDate.Date = reader.GetDateTime(0);
                             liste.Add(uneDate);
                         }
                     }

@@ -11,7 +11,7 @@ namespace SAE_2._01
             get; set;
         }
 
-        public string Date_emprunt
+        public DateTime Date_emprunt
         {
             get; set;
         }
@@ -49,15 +49,15 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from dbo.EMPRUNTE;");
+                    reader = access.getData("select * from EMPRUNTE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Emprunte unEmprunt = new Emprunte();
-                            unEmprunt.Id_vehicule = reader.GetInt64(0);
-                            unEmprunt.Date_emprunt = reader.GetString(1);
-                            unEmprunt.Id_employe = reader.GetInt64(2);
+                            unEmprunt.Id_vehicule = reader.GetInt32(0);
+                            unEmprunt.Date_emprunt = reader.GetDateTime(1);
+                            unEmprunt.Id_employe = reader.GetInt32(2);
                             unEmprunt.Mission_concernee = reader.GetString(3);
                             liste.Add(unEmprunt);
                         }
