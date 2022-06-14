@@ -23,6 +23,7 @@ namespace SAE_2._01
         public MainWindow()
         {
             InitializeComponent();
+            lv1.ItemsSource = ApplicationData.Liste_Emprunte;
         }
     }
 }
