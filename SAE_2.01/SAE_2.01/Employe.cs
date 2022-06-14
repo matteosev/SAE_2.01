@@ -54,7 +54,7 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from EMPLOYE;");
+                    reader = access.getData("select * from [IUT-ACY\\dervauxt].EMPLOYE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

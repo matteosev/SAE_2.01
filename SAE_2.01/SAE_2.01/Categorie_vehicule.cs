@@ -39,7 +39,7 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from CATEGORIE_VEHICULE;");
+                    reader = access.getData("select * from [IUT-ACY\\dervauxt].CATEGORIE_VEHICULE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

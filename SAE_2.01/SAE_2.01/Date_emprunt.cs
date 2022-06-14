@@ -34,7 +34,7 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from DATE_EMPRUNT;");
+                    reader = access.getData("select * from [IUT-ACY\\dervauxt].DATE_EMPRUNT;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())

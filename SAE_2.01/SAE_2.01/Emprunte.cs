@@ -49,7 +49,7 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select * from EMPRUNTE;");
+                    reader = access.getData("select * from [IUT-ACY\\dervauxt].EMPRUNTE;");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
