@@ -11,7 +11,7 @@ namespace SAE_2._01
             get; set;
         }
 
-        public DateTime Date_emprunt
+        public string Date_emprunt
         {
             get; set;
         }
@@ -60,7 +60,7 @@ namespace SAE_2._01
                         while (reader.Read())
                         {
                             DataListView unEmprunt = new DataListView();
-                            unEmprunt.Date_emprunt = reader.GetDateTime(0);
+                            unEmprunt.Date_emprunt = reader.GetDateTime(0).ToString("dd/MM/yyyy");
                             unEmprunt.Nom = reader.GetString(1);
                             unEmprunt.Prenom = reader.GetString(2);
                             unEmprunt.Libelle_vehicule = reader.GetString(3);

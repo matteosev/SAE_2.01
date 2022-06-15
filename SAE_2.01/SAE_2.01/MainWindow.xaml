@@ -32,10 +32,22 @@
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Date_emprunt}" Header="Date" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom employé" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Prenom}" Header="Prénom employé" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Libelle_vehicule}" Header="Véhicule" />
+                        <GridViewColumn
+                            Width="150"
+                            DisplayMemberBinding="{Binding Date_emprunt}"
+                            Header="Date" />
+                        <GridViewColumn
+                            Width="200"
+                            DisplayMemberBinding="{Binding Nom}"
+                            Header="Nom employé" />
+                        <GridViewColumn
+                            Width="200"
+                            DisplayMemberBinding="{Binding Prenom}"
+                            Header="Prénom employé" />
+                        <GridViewColumn
+                            Width="250"
+                            DisplayMemberBinding="{Binding Libelle_vehicule}"
+                            Header="Véhicule" />
                     </GridView>
                 </ListView.View>
             </ListView>
