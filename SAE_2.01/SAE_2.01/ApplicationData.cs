@@ -36,6 +36,12 @@ namespace SAE_2._01
             set;
         }
 
+        public static List<DataListView> Liste_DataListView
+        {
+            get;
+            set;
+        }
+
         public static void loadApplicationData()
         {
             //chargement des tables
@@ -45,12 +51,14 @@ namespace SAE_2._01
             Employe employe = new Employe();
             Emprunte emprunte = new Emprunte();
             Vehicule vehicule = new Vehicule();
+            DataListView dataListView = new DataListView();
 
             Liste_Categorie_vehicule = categorie_vehicule.FindAll();
             Liste_Date_emprunt = date_emprunt.FindAll();
             Liste_Employe = employe.FindAll();
             Liste_Emprunte = emprunte.FindAll();
             Liste_Vehicule = vehicule.FindAll();
+            Liste_DataListView = dataListView.FindAll();
         }
     }
 }

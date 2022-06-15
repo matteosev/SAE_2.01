@@ -27,23 +27,15 @@
                 FontSize="24">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
                     </Style>
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn
-                            Width="256"
-                            DisplayMemberBinding="{Binding Date_emprunt}"
-                            Header="date" />
-                        <GridViewColumn
-                            Width="256"
-                            DisplayMemberBinding="{Binding Id_employe}"
-                            Header="employé" />
-                        <GridViewColumn
-                            Width="256"
-                            DisplayMemberBinding="{Binding Id_vehicule}"
-                            Header="véhicule" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Date_emprunt}" Header="Date" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom employé" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Prenom}" Header="Prénom employé" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Libelle_vehicule}" Header="Véhicule" />
                     </GridView>
                 </ListView.View>
             </ListView>
