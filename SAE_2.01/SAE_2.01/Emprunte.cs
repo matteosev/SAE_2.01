@@ -58,7 +58,10 @@ namespace SAE_2._01
                             unEmprunt.Id_vehicule = reader.GetInt32(0);
                             unEmprunt.Date_emprunt = reader.GetDateTime(1);
                             unEmprunt.Id_employe = reader.GetInt32(2);
-                            unEmprunt.Mission_concernee = reader.GetString(3);
+                            if (reader.IsDBNull(3))
+                                unEmprunt.Mission_concernee = "";
+                            else
+                                unEmprunt.Mission_concernee = reader.GetString(3);
                             liste.Add(unEmprunt);
                         }
                     }
