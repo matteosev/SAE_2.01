@@ -11,7 +11,22 @@ namespace SAE_2._01
             get; set;
         }
 
+        public int ID_vehicule
+        {
+            get; set;
+        }
+
+        public string Libelle_CategorieVehicule
+        {
+            get; set;
+        }
+
         public string Date_emprunt
+        {
+            get; set;
+        }
+
+        public int ID_employe
         {
             get; set;
         }
@@ -22,6 +37,16 @@ namespace SAE_2._01
         }
 
         public string Prenom
+        {
+            get; set;
+        }
+
+        public string NumTel_employe
+        {
+            get; set;
+        }
+
+        public string Mail_employe
         {
             get; set;
         }
@@ -54,20 +79,27 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    reader = access.getData("select eprnt.DATE_EMPRUNT, eplye.NOM, eplye.PRENOM, vhicl.LIBELLE_VEHICULE, eprnt.MISSION_CONCERNEE from [IUT-ACY\\dervauxt].EMPRUNTE eprnt join [IUT-ACY\\dervauxt].EMPLOYE eplye on eprnt.ID_EMPLOYE = eplye.ID_EMPLOYE join [IUT-ACY\\dervauxt].VEHICULE vhicl on eprnt.ID_VEHICULE = vhicl.ID_VEHICULE");
+                    reader = access.getData("select eprnt.DATE_EMPRUNT, eplye.ID_EMPLOYE, eplye.NOM, eplye.PRENOM, eplye.NUM_TEL, eplye.MAIL, vhicl.ID_VEHICULE, vhicl.LIBELLE_VEHICULE, cat.LIBELLE_CATEGORIE, eprnt.MISSION_CONCERNEE from [IUT-ACY\\dervauxt].EMPRUNTE eprnt join [IUT-ACY\\dervauxt].EMPLOYE eplye on eprnt.ID_EMPLOYE = eplye.ID_EMPLOYE join [IUT-ACY\\dervauxt].VEHICULE vhicl on eprnt.ID_VEHICULE = vhicl.ID_VEHICULE join [IUT-ACY\\dervauxt].CATEGORIE_VEHICULE cat on vhicl.ID_CATEGORIE = cat.ID_CATEGORIE");
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             DataListView unEmprunt = new DataListView();
                             unEmprunt.Date_emprunt = reader.GetDateTime(0).ToString("dd/MM/yyyy");
-                            unEmprunt.Nom = reader.GetString(1);
-                            unEmprunt.Prenom = reader.GetString(2);
-                            unEmprunt.Libelle_vehicule = reader.GetString(3);
-                            if (reader.IsDBNull(4))
+                            unEmprunt.ID_employe = reader.GetInt32(1);
+                            unEmprunt.Nom = reader.GetString(2);
+                            unEmprunt.Prenom = reader.GetString(3);
+                            unEmprunt.NumTel_employe = reader.GetString(4);
+                            unEmprunt.Mail_employe = reader.GetString(5);
+                            unEmprunt.ID_vehicule = reader.GetInt32(6);
+                            unEmprunt.Libelle_vehicule = reader.GetString(7);
+                            unEmprunt.Libelle_CategorieVehicule = reader.GetString(8);
+
+
+                            if (reader.IsDBNull(9))
                                 unEmprunt.Mission_concernee = "";
                             else
-                                unEmprunt.Mission_concernee = reader.GetString(4);
+                                unEmprunt.Mission_concernee = reader.GetString(9);
                             liste.Add(unEmprunt);
                         }
                     }

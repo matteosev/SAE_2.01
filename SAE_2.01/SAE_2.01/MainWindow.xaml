@@ -22,6 +22,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <ListView
+                SelectionMode="Single"
                 x:Name="lv1"
                 Margin="10,10,10,10"
                 FontSize="24">
@@ -72,7 +73,7 @@
                 Margin="25,381,25,176"
                 Content="Consulter"
                 FontSize="24"
-                FontWeight="Normal" />
+                FontWeight="Normal" Click="btnConsulter_Click" />
             <Button
                 x:Name="btnModifier"
                 Grid.Column="1"
