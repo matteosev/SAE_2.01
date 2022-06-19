@@ -82,7 +82,7 @@ namespace SAE_2._01
                     if (!dateExiste)
                     {
                         CultureInfo provider = CultureInfo.InvariantCulture;
-                        access.setData($"INSERT INTO [IUT-ACY\\dervauxt].DATE_EMPRUNT VALUES({DateTime.ParseExact(Date_emprunt, "dd/MM/yyyy", provider)});");
+                        access.setData($"INSERT INTO [IUT-ACY\\dervauxt].DATE_EMPRUNT VALUES('{DateTime.ParseExact(Date_emprunt, "dd/MM/yyyy", provider)}');");
                     }
 
                     access.setData($"INSERT INTO [IUT-ACY\\dervauxt].EMPRUNTE(ID_VEHICULE, DATE_EMPRUNT, ID_EMPLOYE, MISSION_CONCERNEE) VALUES('{ID_vehicule}','{Date_emprunt}','{ID_employe}','{Mission_concernee}');");
