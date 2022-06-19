@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace SAE_2._01
 {
@@ -62,7 +63,35 @@ namespace SAE_2._01
 
         public void Create()
         {
-            throw new System.NotImplementedException();
+            DataAccess access = new DataAccess();
+            SqlDataReader reader;
+
+            try
+            {
+                if (access.openConnection())
+                {
+                    bool dateExiste = false;
+                    reader = access.getData("SELECT * FROM [IUT-ACY\\dervauxt].DATE_EMPRUNT;");
+
+                    while (!dateExiste && reader.Read())
+                    {
+                        if (reader.GetDateTime(0).CompareTo(DateTime.Parse(Date_emprunt)) == 0)
+                            dateExiste = true;
+                    }
+
+                    if (!dateExiste)
+                    {
+                        CultureInfo provider = CultureInfo.InvariantCulture;
+                        access.setData($"INSERT INTO [IUT-ACY\\dervauxt].DATE_EMPRUNT VALUES({DateTime.ParseExact(Date_emprunt, "dd/MM/yyyy", provider)});");
+                    }
+
+                    access.setData($"INSERT INTO [IUT-ACY\\dervauxt].EMPRUNTE(ID_VEHICULE, DATE_EMPRUNT, ID_EMPLOYE, MISSION_CONCERNEE) VALUES('{ID_vehicule}','{Date_emprunt}','{ID_employe}','{Mission_concernee}');");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "cfcfd Message");
+            }
         }
 
         public void Delete()

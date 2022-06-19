@@ -44,5 +44,21 @@ namespace SAE_2._01
             consulterWindow.Owner = this;
             consulterWindow.Show();
         }
+
+        private void btnCreer_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime date = DateTime.Parse(txtDate.Text);
+            int idEmploye = int.Parse(txtEmploye.Text);
+            int idVehicule = int.Parse(txtVehicule.Text);
+            string mission = txtMission.Text;
+
+            DataListView newEmprunteItem = new DataListView();
+            newEmprunteItem.Date_emprunt = date.ToShortDateString();
+            newEmprunteItem.ID_employe = idEmploye;
+            newEmprunteItem.ID_vehicule = idVehicule;
+            newEmprunteItem.Mission_concernee = mission;
+
+            newEmprunteItem.Create();
+        }
     }
 }
