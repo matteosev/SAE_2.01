@@ -102,7 +102,8 @@ namespace SAE_2._01
             {
                 if (access.openConnection())
                 {
-                    access.setData($"DELETE FROM [IUT-ACY\\dervauxt].EMPRUNTE WHERE 'ID_VEHICULE' = '{ID_vehicule}' AND 'DATE_EMPRUNT' = '{Date_emprunt}' AND 'ID_EMPLOYE' = '{ID_employe}';");
+                    access.setData($"DELETE FROM [IUT-ACY\\dervauxt].EMPRUNTE WHERE ID_VEHICULE = {ID_vehicule} AND DATE_EMPRUNT = '{Date_emprunt}' AND ID_EMPLOYE = {ID_employe};");
+                    
                 }
             }
             catch (Exception ex)
