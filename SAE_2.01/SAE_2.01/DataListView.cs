@@ -90,13 +90,25 @@ namespace SAE_2._01
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "cfcfd Message");
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
             }
         }
 
         public void Delete()
         {
-            throw new System.NotImplementedException();
+            DataAccess access = new DataAccess();
+
+            try
+            {
+                if (access.openConnection())
+                {
+                    access.setData($"DELETE FROM [IUT-ACY\\dervauxt].EMPRUNTE WHERE 'ID_VEHICULE' = '{ID_vehicule}' AND 'DATE_EMPRUNT' = '{Date_emprunt}' AND 'ID_EMPLOYE' = '{ID_employe}';");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message, "Important Message");
+            }
         }
 
         public List<DataListView> FindAll()

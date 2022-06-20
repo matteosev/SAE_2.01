@@ -59,6 +59,16 @@ namespace SAE_2._01
             newEmprunteItem.Mission_concernee = mission;
 
             newEmprunteItem.Create();
+            ApplicationData.loadApplicationData();
+            lv1.ItemsSource = ApplicationData.Liste_DataListView;
+        }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            DataListView data = (DataListView)lv1.SelectedItem;
+            data.Delete();
+            ApplicationData.loadApplicationData();
+            lv1.ItemsSource = ApplicationData.Liste_DataListView;
         }
     }
 }

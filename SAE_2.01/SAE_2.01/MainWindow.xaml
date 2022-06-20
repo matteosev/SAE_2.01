@@ -87,7 +87,7 @@
                 Height="73"
                 Margin="25,531,25,23"
                 Content="Supprimer"
-                FontSize="24" />
+                FontSize="24" Click="btnSupprimer_Click" />
             <TextBox
                 Grid.Column="1"
                 Margin="25,141,25,455"
