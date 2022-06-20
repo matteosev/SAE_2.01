@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace SAE_2._01
 {
-    class DataListView : Crud<DataListView>
+    public class DataListView : Crud<DataListView>
     {
         public string Libelle_vehicule
         {
@@ -59,12 +59,23 @@ namespace SAE_2._01
 
         public DataListView()
         {
+            ID_employe = 0;
+            ID_vehicule = 0;
         }
 
         public void Create()
         {
             DataAccess access = new DataAccess();
             SqlDataReader reader;
+
+            if (Date_emprunt is null)
+                throw new ArgumentNullException("La date est null");
+
+            if (ID_employe == 0)
+                throw new ArgumentException("ID employé non renseigné");
+
+            if (ID_vehicule == 0)
+                throw new ArgumentException("ID véhicule non renseigné");
 
             try
             {
@@ -97,6 +108,15 @@ namespace SAE_2._01
         public void Delete()
         {
             DataAccess access = new DataAccess();
+
+            if (Date_emprunt is null)
+                throw new ArgumentNullException("La date est null");
+
+            if (ID_employe == 0)
+                throw new ArgumentException("ID employé non renseigné");
+
+            if (ID_vehicule == 0)
+                throw new ArgumentException("ID véhicule non renseigné");
 
             try
             {
