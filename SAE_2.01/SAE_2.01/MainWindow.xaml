@@ -22,10 +22,10 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <ListView
-                SelectionMode="Single"
                 x:Name="lv1"
                 Margin="10,10,10,10"
-                FontSize="24">
+                FontSize="24"
+                SelectionMode="Single">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -61,9 +61,10 @@
                 Grid.Column="1"
                 Height="70"
                 Margin="25,381,25,176"
+                Click="btnConsulter_Click"
                 Content="Consulter"
                 FontSize="24"
-                FontWeight="Normal" Click="btnConsulter_Click" />
+                FontWeight="Normal" />
             <Button
                 x:Name="btnModifier"
                 Grid.Column="1"
@@ -76,8 +77,17 @@
                 Grid.Column="1"
                 Height="73"
                 Margin="25,531,25,23"
+                Click="btnSupprimer_Click"
                 Content="Supprimer"
-                FontSize="24" Click="btnSupprimer_Click" />
+                FontSize="24" />
+            <Button
+                x:Name="btnConsulterID"
+                Grid.Column="1"
+                Margin="28,28,22,523"
+                Click="btnConsulterID_Click"
+                Content="Consulter les ID"
+                FontSize="24"
+                FontWeight="Normal" />
         </Grid>
         <Grid Grid.Row="1">
             <Grid Margin="10,10,10,10">
@@ -93,9 +103,10 @@
                     Grid.Column="0"
                     Height="45"
                     Margin="68,18,68,0"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Content="Date"
-                    FontSize="24" HorizontalAlignment="Center" />
+                    FontSize="24" />
                 <TextBox
                     x:Name="txtDate"
                     Grid.Column="0"
@@ -110,35 +121,47 @@
                     Grid.Column="3"
                     Height="45"
                     Margin="87,18,86,0"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Content="mission concernée"
-                    FontSize="24" HorizontalAlignment="Center" />
+                    FontSize="24" />
                 <TextBox
                     x:Name="txtMission"
                     Grid.Column="3"
+                    Height="30"
                     Margin="10,68,10,0"
+                    VerticalAlignment="Top"
                     FontSize="18"
                     Text=""
-                    TextWrapping="Wrap" Height="30" VerticalAlignment="Top" />
-                <Button x:Name="btnCreer"
+                    TextWrapping="Wrap" />
+                <Button
+                    x:Name="btnCreer"
                     Grid.Column="4"
+                    Width="177"
+                    Height="95"
                     Margin="0,10,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Click="btnCreer_Click"
                     Content="Créer"
-                    FontSize="24" Click="btnCreer_Click" HorizontalAlignment="Center" Width="177" Height="95" VerticalAlignment="Top" />
+                    FontSize="24" />
                 <Label
                     Grid.Column="1"
                     Height="45"
                     Margin="27,18,27,0"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Top"
+                    HorizontalContentAlignment="Center"
                     Content="ID employé"
-                    FontSize="24" HorizontalContentAlignment="Center" HorizontalAlignment="Center" />
+                    FontSize="24" />
                 <Label
                     Grid.Column="2"
                     Height="45"
                     Margin="34,18,33,0"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Content="ID véhicule"
-                    FontSize="24" HorizontalAlignment="Center" />
+                    FontSize="24" />
                 <TextBox
                     x:Name="txtEmploye"
                     Grid.Column="1"

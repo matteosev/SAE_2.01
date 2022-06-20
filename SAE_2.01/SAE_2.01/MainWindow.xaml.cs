@@ -104,5 +104,10 @@ namespace SAE_2._01
                 lv1.ItemsSource = ApplicationData.Liste_DataListView;
             }
         }
+
+        private void btnConsulterID_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
