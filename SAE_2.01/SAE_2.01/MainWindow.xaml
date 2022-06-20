@@ -56,16 +56,6 @@
                 Grid.Column="1"
                 Margin="15,10,10,13"
                 Stroke="Black" />
-
-            <ListView
-                x:Name="lvRechercher"
-                Grid.Column="1"
-                Margin="25,24,25,491"
-                FontSize="24">
-                <ListViewItem Content="date" />
-                <ListViewItem Content="employé" />
-                <ListViewItem Content="véhicule" />
-            </ListView>
             <Button
                 x:Name="btnConsulter"
                 Grid.Column="1"
@@ -88,17 +78,6 @@
                 Margin="25,531,25,23"
                 Content="Supprimer"
                 FontSize="24" Click="btnSupprimer_Click" />
-            <TextBox
-                Grid.Column="1"
-                Margin="25,141,25,455"
-                FontSize="18"
-                TextWrapping="Wrap" />
-            <Button
-                Grid.Column="1"
-                Margin="25,177,26,0"
-                VerticalAlignment="Top"
-                Content="Rechercher"
-                FontSize="24" />
         </Grid>
         <Grid Grid.Row="1">
             <Grid Margin="10,10,10,10">
