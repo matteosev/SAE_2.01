@@ -80,14 +80,7 @@
                 Click="btnSupprimer_Click"
                 Content="Supprimer"
                 FontSize="24" />
-            <Button
-                x:Name="btnConsulterID"
-                Grid.Column="1"
-                Margin="28,28,22,523"
-                Click="btnConsulterID_Click"
-                Content="Consulter les ID"
-                FontSize="24"
-                FontWeight="Normal" />
+            
         </Grid>
         <Grid Grid.Row="1">
             <Grid Margin="10,10,10,10">

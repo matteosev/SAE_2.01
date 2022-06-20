@@ -105,9 +105,6 @@ namespace SAE_2._01
             }
         }
 
-        private void btnConsulterID_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }
