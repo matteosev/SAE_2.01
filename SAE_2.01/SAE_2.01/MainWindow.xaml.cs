@@ -92,10 +92,17 @@ namespace SAE_2._01
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            DataListView data = (DataListView)lv1.SelectedItem;
-            data.Delete();
-            ApplicationData.loadApplicationData();
-            lv1.ItemsSource = ApplicationData.Liste_DataListView;
+            if (lv1.SelectedItem == null)
+            {
+                MessageBox.Show("selectionner la reservation a supprimer", "erreur selection", 0, MessageBoxImage.Error);
+            }
+            else
+            {
+                DataListView data = (DataListView)lv1.SelectedItem;
+                data.Delete();
+                ApplicationData.loadApplicationData();
+                lv1.ItemsSource = ApplicationData.Liste_DataListView;
+            }
         }
     }
 }
